@@ -1,0 +1,78 @@
+/* Light Slate-Grey Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #f1f5f9; /* Light Slate Grey */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+/* User Greeting in Muted Dark Grey */
+.nav-user-top {
+  font-size: 0.9rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-left-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Navigation Links in Dark Navy */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  color: #1d3557;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+/* Logout Button */
+.btn-logout {
+  background-color: transparent;
+  border: 1px solid #1d3557;
+  color: #1d3557;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #1d3557;
+  color: #ffffff;
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
