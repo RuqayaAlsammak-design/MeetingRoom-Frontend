@@ -76,3 +76,40 @@
   background-color: #f8fafc;
 }
 
+
+.btn-google-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #4285f4;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-google-calendar:hover {
+  background-color: #3367d6;
+}
+
+.btn-download-ics {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-download-ics:hover {
+  background-color: #0369a1;
+}

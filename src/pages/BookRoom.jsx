@@ -109,7 +109,7 @@ const BookRoom = () => {
             type="time"
             min="08:00"
             max="15:30"
-            step="1800"
+            step="60"
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
             required
@@ -122,7 +122,7 @@ const BookRoom = () => {
             type="time"
             min="08:30"
             max="16:00"
-            step="1800"
+            step="60"
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
             required
