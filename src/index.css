@@ -1,115 +1,92 @@
-/* Light Slate-Grey Navbar */
-.navbar {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  background-color: #f1f5f9; /* Light Slate Grey */
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #cbd5e1;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+@import "tailwindcss";
+
+:root {
+  --primary-navy: #1d3567;
+  --primary-navy-hover: #14254b;
+  --accent-blue: #2563eb;
+  --bg-light: #f8fafc;
+  --card-bg: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --radius: 8px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-.nav-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 8px;
+* {
+  box-sizing: border-box;
 }
 
-/* User Greeting in Muted Dark Grey */
-.nav-user-top {
-  font-size: 0.9rem;
-  color: #475569;
-  font-weight: 500;
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-.nav-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-left-group {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-
-/* Navigation Links in Dark Navy */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-}
-
-.nav-links a {
-  color: #1d3557;
+a {
   text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
+  color: inherit;
 }
 
-.nav-links a:hover {
-  color: #2563eb;
+/* Base Form Control Elements */
+input, select, textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--text-dark);
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Logout Button */
-.btn-logout {
-  background-color: transparent;
-  border: 1px solid #1d3557;
-  color: #1d3557;
-  padding: 6px 16px;
-  border-radius: 6px;
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-navy);
+  box-shadow: 0 0 0 3px rgba(29, 53, 103, 0.15);
+}
+
+label {
+  display: block;
   font-weight: 600;
+  font-size: 13px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button {
   cursor: pointer;
+  border: none;
+  font-family: inherit;
+  border-radius: var(--radius);
+  font-weight: 600;
   transition: all 0.2s ease;
 }
 
-.btn-logout:hover {
-  background-color: #1d3557;
+.btn-primary {
+  background-color: var(--primary-navy);
   color: #ffffff;
+  padding: 10px 20px;
+  font-size: 14px;
 }
 
-.app-container {
-  min-height: 100vh;
-  background-color: #f8fafc;
+.btn-primary:hover {
+  background-color: var(--primary-navy-hover);
 }
 
-
-.btn-google-calendar {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #4285f4;
-  color: #ffffff;
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
-}
-
-.btn-google-calendar:hover {
-  background-color: #3367d6;
-}
-
-.btn-download-ics {
-  background-color: #0284c7;
-  color: #ffffff;
-  border: none;
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
   padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.2s ease;
 }
 
-.btn-download-ics:hover {
-  background-color: #0369a1;
+.btn-outline:hover {
+  background-color: #f1f5f9;
 }
