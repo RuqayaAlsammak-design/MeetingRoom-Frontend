@@ -21,6 +21,7 @@ function App() {
   return (
     <AuthProvider>
       <Router
+        basename="/meetingroom" // 👈 Added router basename for Apache subdirectory deployment
         future={{
           v7_startTransition: true,
           v7_relativeSplatPath: true,

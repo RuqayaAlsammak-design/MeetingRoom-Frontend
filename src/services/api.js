@@ -3,9 +3,6 @@ import axios from 'axios';
 // Base API URL configuration with Vite environment variable fallback
 export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
-// Extract root host URL for OAuth redirects (e.g., http://localhost:5000)
-const SERVER_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, '');
-
 const API = axios.create({
   baseURL: API_BASE_URL,
 });
@@ -40,9 +37,9 @@ API.interceptors.response.use(
   }
 );
 
-// OAuth trigger helper
+// OAuth trigger helper (ensures it respects the /api path for deployment)
 export const loginWithMicrosoft = () => {
-  window.location.href = `${SERVER_BASE_URL}/auth/microsoft`;
+  window.location.href = `${API_BASE_URL}/auth/microsoft`;
 };
 
 export default API;

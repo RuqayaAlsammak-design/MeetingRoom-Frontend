@@ -1,2 +1,9 @@
-# Frontend API Base URL
+# ==========================================
+# ENVIRONMENT CONFIGURATION
+# ==========================================
+
+# Use this for Local Development (on your PC)
 VITE_API_URL=http://localhost:5000/api
+
+# Uncomment this line when building for Production / Apache Subdirectory (/meetingroom/)
+# VITE_API_URL=/meetingroom/api

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+  base: '/meetingroom/', // 👈 Sets the base path for Apache subdirectory deployment
   plugins: [
     react(),
     tailwindcss(),

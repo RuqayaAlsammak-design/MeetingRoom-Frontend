@@ -1,18 +1,44 @@
-import { createContext, useContext } from 'react';
-import axios from 'axios';
+import { createContext, useContext, useState } from 'react';
+import API from '../services/api'; // ✅ Import your centralized api service
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
   const login = async (credentials) => {
-    const response = await axios.post('http://localhost:5000/api/auth/login', credentials);
-    
-    localStorage.setItem('user', JSON.stringify(response.data));
-    return response.data;
+    try {
+      // ✅ Relative path appends automatically to VITE_API_URL (/meetingroom/api/auth/login)
+      const response = await API.post('/auth/login', credentials);
+      
+      // Handle successful login and token/user storage
+      const userData = response.data.user || response.data;
+      const token = response.data.token;
+
+      if (token) {
+        localStorage.setItem('token', token);
+      }
+      localStorage.setItem('user', JSON.stringify(userData));
+      setUser(userData);
+      
+      return response.data;
+    } catch (error) {
+      console.error('Login failed:', error);
+      throw error;
+    }
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ login }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
